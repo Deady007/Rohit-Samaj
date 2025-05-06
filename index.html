@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Business Ad Section</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <section class="bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 py-16 px-6 sm:px-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+      <!-- Left: Image -->
+      <div class="relative">
+        <img src="v.png" alt="Business Image" class="rounded-3xl shadow-lg hover:scale-105 transition duration-500 ease-in-out">
+        <div class="absolute -top-4 -left-4 bg-white text-indigo-600 px-4 py-2 rounded-xl shadow font-bold text-sm">🔥 Most Trusted</div>
+      </div>
+
+      <!-- Right: Content -->
+      <div>
+        <h2 class="text-4xl font-extrabold text-indigo-800 mb-4 leading-tight">Grow Your Business with Confidence</h2>
+        <p class="text-lg text-gray-700 mb-6">
+          At <span class="font-bold text-purple-600">ElevateX Solutions</span>, we offer a full suite of digital services including web design, branding, and growth marketing — all tailored to make your business shine in the digital world.
+        </p>
+
+        <!-- Key Features -->
+        <ul class="space-y-4 mb-6">
+          <li class="flex items-start">
+            <span class="text-green-500 mr-3 text-xl">✔</span>
+            <span><strong>Custom Web Design:</strong> Crafted websites that convert visitors into customers.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-3 text-xl">✔</span>
+            <span><strong>Brand Strategy:</strong> Make your brand unforgettable with visuals and storytelling.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-green-500 mr-3 text-xl">✔</span>
+            <span><strong>Marketing Campaigns:</strong> Reach the right people at the right time using modern digital strategies.</span>
+          </li>
+        </ul>
+
+        <!-- CTA Button -->
+        <a href="/contact" class="inline-block px-6 py-3 bg-purple-600 text-white font-semibold rounded-xl shadow hover:bg-purple-700 transition">
+          🚀 Let's Work Together
+        </a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Business Showcase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- 🔝 Card Layout -->
+  <section class="p-8">
+    <h2 class="text-2xl font-bold mb-4">🔝 Best: Card Layout</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition hover:scale-105">
+        <img src="m.png" class="rounded-lg mb-4 h-40 w-full object-cover">
+        <h3 class="text-xl font-bold">Web Development</h3>
+        <p class="text-gray-600 mt-2">Build fast and modern websites tailored to your needs.</p>
+        <a href="#" class="mt-4 inline-block text-blue-600 font-semibold">Learn More →</a>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition hover:scale-105 border-l-4 border-green-400">
+        <img src="m.png" class="rounded-lg mb-4 h-40 w-full object-cover">
+        <h3 class="text-xl font-bold">Graphic Design</h3>
+        <p class="text-gray-600 mt-2">Creative visuals to enhance your brand identity.</p>
+        <a href="#" class="mt-4 inline-block text-green-600 font-semibold">Contact Us →</a>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition hover:scale-105 border-l-4 border-red-400">
+        <img src="m.png" class="rounded-lg mb-4 h-40 w-full object-cover">
+        <h3 class="text-xl font-bold">Digital Marketing</h3>
+        <p class="text-gray-600 mt-2">Reach your audience through effective campaigns.</p>
+        <a href="#" class="mt-4 inline-block text-red-600 font-semibold">Learn More →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🖼️ Carousel Showcase -->
+  <section class="p-8 bg-white">
+    <h2 class="text-2xl font-bold mb-4">🖼️ Carousel Showcase</h2>
+    <div class="relative overflow-hidden">
+      <div class="flex transition-transform duration-700" id="carousel">
+          <img src="v.png" class="min-w-full h-64 object-cover">
+          <img src="m.png" class="min-w-full h-64 object-cover">
+          <img src="v.png" class="min-w-full h-64 object-cover">
+      </div>
+    </div>
+    <script>
+      let i = 0;
+      setInterval(() => {
+        i = (i + 1) % 3;
+        document.getElementById("carousel").style.transform = `translateX(-${i * 100}%)`;
+      }, 3000);
+    </script>
+  </section>
+
+  <!-- 🧩 Animated Stats -->
+  <section class="p-8 bg-gradient-to-r from-blue-50 to-purple-100">
+    <h2 class="text-2xl font-bold mb-4">🧩 Animated Stats</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+      <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition">
+        <h3 class="text-3xl font-bold text-blue-600 counter" data-count="1500">0</h3>
+        <p class="text-gray-700 mt-2">Clients Served</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition">
+        <h3 class="text-3xl font-bold text-green-600 counter" data-count="250">0</h3>
+        <p class="text-gray-700 mt-2">Projects Completed</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md hover:scale-105 transition">
+        <h3 class="text-3xl font-bold text-red-600 counter" data-count="12">0</h3>
+        <p class="text-gray-700 mt-2">Years Experience</p>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll('.counter').forEach(counter => {
+        const update = () => {
+          const target = +counter.getAttribute('data-count');
+          const count = +counter.innerText;
+          const inc = target / 100;
+          if (count < target) {
+            counter.innerText = Math.ceil(count + inc);
+            setTimeout(update, 30);
+          } else {
+            counter.innerText = target;
+          }
+        };
+        update();
+      });
+    </script>
+  </section>
+
+  <!-- 🗂️ Tabbed Services -->
+  <section class="p-8">
+    <h2 class="text-2xl font-bold mb-4">🗂️ Tabbed Services</h2>
+    <div>
+      <div class="flex gap-4 mb-4">
+        <button onclick="showTab('one')" class="px-4 py-2 bg-blue-200 rounded">Web</button>
+        <button onclick="showTab('two')" class="px-4 py-2 bg-blue-200 rounded">Design</button>
+        <button onclick="showTab('three')" class="px-4 py-2 bg-blue-200 rounded">Marketing</button>
+      </div>
+      <div id="one" class="tab">
+        <p>We build secure and responsive websites with modern technologies.</p>
+      </div>
+      <div id="two" class="tab hidden">
+        <p>Designs that speak for your brand—logos, brochures, UI/UX and more.</p>
+      </div>
+      <div id="three" class="tab hidden">
+        <p>From SEO to Ads, we grow your digital presence across platforms.</p>
+      </div>
+    </div>
+    <script>
+      function showTab(id) {
+        document.querySelectorAll('.tab').forEach(el => el.classList.add('hidden'));
+        document.getElementById(id).classList.remove('hidden');
+      }
+    </script>
+  </section>
+
+  <!-- 🧱 Split Layout -->
+  <section class="p-8 bg-gray-100">
+    <h2 class="text-2xl font-bold mb-4">🧱 Split Layout</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+      <img src="v.png" class="rounded-xl shadow-md h-full object-cover">
+      <div>
+        <h3 class="text-xl font-bold mb-2">We Make Brands Shine</h3>
+        <p class="text-gray-700 mb-4">Our team provides end-to-end business solutions, from design to marketing, all tailored to your brand's goals.</p>
+        <a href="#" class="text-blue-600 font-semibold">Get Started →</a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative Business Showcase</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .flip-card {
+      perspective: 1000px;
+    }
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-front, .flip-back {
+      position: absolute;
+      width: 100%;
+      backface-visibility: hidden;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+    .flip-front {
+      background: white;
+      z-index: 2;
+    }
+    .flip-back {
+      background: #f9fafb;
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-6">
+
+  <h1 class="text-4xl font-bold text-center mb-10">Our Businesses</h1>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Business Card 1 -->
+    <div class="flip-card w-full h-96">
+      <div class="flip-inner">
+        <!-- Front Side -->
+        <div class="flip-front p-6 shadow-lg">
+          <img src="m.png" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-bold">Tasty Bites</h3>
+          <p class="text-gray-600">A delightful dine-in restaurant serving fresh Italian cuisine.</p>
+        </div>
+
+        <!-- Back Side -->
+        <div class="flip-back p-6 shadow-lg">
+          <h3 class="text-xl font-bold mb-2">Tasty Bites</h3>
+          <p><strong>Location:</strong> 123 Food Street, NY</p>
+          <p><strong>Contact:</strong> (555) 123-4567</p>
+          <p><strong>Hours:</strong> 10 AM - 11 PM</p>
+          <p class="mt-2">Enjoy handmade pasta, pizzas, and a cozy dining atmosphere perfect for families and dates.</p>
+          <a href="#" class="text-blue-600 mt-4 inline-block font-semibold">Visit Website →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Business Card 2 -->
+    <div class="flip-card w-full h-96">
+      <div class="flip-inner">
+        <!-- Front Side -->
+        <div class="flip-front p-6 shadow-lg">
+          <img src="v.png" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-bold">GlowUp Studio</h3>
+          <p class="text-gray-600">Premium beauty services from expert stylists and aestheticians.</p>
+        </div>
+
+        <!-- Back Side -->
+        <div class="flip-back p-6 shadow-lg">
+          <h3 class="text-xl font-bold mb-2">GlowUp Studio</h3>
+          <p><strong>Location:</strong> 45 Style Ave, LA</p>
+          <p><strong>Contact:</strong> (555) 765-4321</p>
+          <p><strong>Hours:</strong> 9 AM - 8 PM</p>
+          <p class="mt-2">We offer haircuts, spa treatments, bridal makeup, and more with luxury service guaranteed.</p>
+          <a href="#" class="text-blue-600 mt-4 inline-block font-semibold">Book Appointment →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Business Card 3 -->
+    <div class="flip-card w-full h-96">
+      <div class="flip-inner">
+        <!-- Front Side -->
+        <div class="flip-front p-6 shadow-lg">
+          <img src="m.png" class="w-full h-40 object-cover rounded-md mb-4">
+          <h3 class="text-xl font-bold">TechNova</h3>
+          <p class="text-gray-600">Innovative tech solutions for startups and enterprises alike.</p>
+        </div>
+
+        <!-- Back Side -->
+        <div class="flip-back p-6 shadow-lg">
+          <h3 class="text-xl font-bold mb-2">TechNova</h3>
+          <p><strong>Location:</strong> 88 Innovation Blvd, SF</p>
+          <p><strong>Contact:</strong> hello@technova.io</p>
+          <p><strong>Hours:</strong> 24/7 Online Support</p>
+          <p class="mt-2">We specialize in cloud, AI, mobile apps, and enterprise software with agile development.</p>
+          <a href="#" class="text-blue-600 mt-4 inline-block font-semibold">Explore Services →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="max-w-7xl mx-auto py-16 px-4">
+    <h2 class="text-4xl font-extrabold text-center text-indigo-700 mb-10">Our Top Business Services</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- Card 1 -->
+      <div class="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-6">
+        <img src="v.png" alt="Marketing" class="rounded-xl mb-4 w-full h-40 object-cover">
+        <h3 class="text-2xl font-bold text-purple-700 mb-2">Digital Marketing Pro</h3>
+        <p class="text-gray-600 mb-4">Boost your business with our SEO, social media, and ad campaign services.</p>
+        <ul class="text-sm text-gray-700 mb-4 space-y-1">
+          <li>✔ SEO Optimization</li>
+          <li>✔ PPC Campaigns</li>
+          <li>✔ Instagram/Facebook Ads</li>
+        </ul>
+        <a href="#" class="text-white bg-purple-600 px-4 py-2 rounded-xl font-medium hover:bg-purple-700">Learn More</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-6">
+        <img src="m.png" alt="Web Design" class="rounded-xl mb-4 w-full h-40 object-cover">
+        <h3 class="text-2xl font-bold text-blue-700 mb-2">Custom Web Design</h3>
+        <p class="text-gray-600 mb-4">Elegant and responsive websites tailored to fit your brand identity.</p>
+        <ul class="text-sm text-gray-700 mb-4 space-y-1">
+          <li>✔ Mobile-first Design</li>
+          <li>✔ Fast & Secure</li>
+          <li>✔ E-Commerce Integration</li>
+        </ul>
+        <a href="#" class="text-white bg-blue-600 px-4 py-2 rounded-xl font-medium hover:bg-blue-700">Get Started</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-1 p-6">
+        <img src="v.png" alt="Branding" class="rounded-xl mb-4 w-full h-40 object-cover">
+        <h3 class="text-2xl font-bold text-pink-700 mb-2">Brand Identity Studio</h3>
+        <p class="text-gray-600 mb-4">Create a strong brand image that speaks to your audience and builds trust.</p>
+        <ul class="text-sm text-gray-700 mb-4 space-y-1">
+          <li>✔ Logo & Colors</li>
+          <li>✔ Voice & Messaging</li>
+          <li>✔ Consistent Identity</li>
+        </ul>
+        <a href="#" class="text-white bg-pink-600 px-4 py-2 rounded-xl font-medium hover:bg-pink-700">Build Your Brand</a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
