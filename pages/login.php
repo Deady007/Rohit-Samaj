@@ -1,5 +1,4 @@
 <?php 
-
 session_start();
 include "../configs/db.php";
 
@@ -9,22 +8,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['login'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $stmt = $conn->prepare("SELECT id, password, verified FROM users WHERE email=?");
+    $stmt = $conn->prepare("SELECT id, password, verified, role, status FROM users WHERE email=?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
-    $stmt->bind_result($user_id, $hashed_pw, $verified);
-    if ($stmt->fetch() && password_verify($password, $hashed_pw)) {
-        if ($verified) {
-            $_SESSION['email'] = $email; 
-            $_SESSION['user_id'] = $user_id;
-            header("Location: ../user/dashboard.php");
-            exit();
-        } else {
+    $stmt->bind_result($user_id, $hashed_pw, $verified, $role, $status);
+
+    if ($stmt->fetch()) {
+        if (!password_verify($password, $hashed_pw)) {
+            $msg = "Invalid credentials.";
+        } elseif (!$verified) {
             $msg = "Please verify your email first.";
+        } elseif ($status !== 'active') {
+            $msg = "Your account is suspended. Contact support.";
+        } else {
+            // Authenticated
+            $_SESSION['email'] = $email;
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['role'] = $role;
+
+            header("Location: " . ($role === 'admin' ? "../admin/index.php" : "../user/dashboard.php"));
+            exit();
         }
     } else {
         $msg = "Invalid login.";
     }
+
+    $stmt->close();
 }
 ?>
 

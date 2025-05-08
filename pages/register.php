@@ -11,14 +11,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 $email = $password = $msg = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
     $otp = rand(100000, 999999);
     $otp_expiry = date("Y-m-d H:i:s", strtotime("+1 minute"));
 
-    $stmt = $conn->prepare("INSERT INTO users (email, password, otp, otp_expiry) VALUES (?, ?, ?, ?)");
+    $stmt = $conn->prepare("INSERT INTO users (name, phone, email, password, otp, otp_expiry) VALUES (?, ?, ?, ?, ?, ?)");
     if ($stmt) {
-        $stmt->bind_param("ssss", $email, $password, $otp, $otp_expiry);
+        $stmt->bind_param("ssssss", $name, $phone, $email, $password, $otp, $otp_expiry);
         if ($stmt->execute()) {
             $_SESSION['email'] = $email; // Set the session variable
         } else {
@@ -100,6 +102,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
 
     <form method="post" class="space-y-5">
       <div>
+        <label for="name" class="block text-gray-300 mb-2">Name</label>
+        <input type="text" name="name" id="name" required
+               class="w-full px-4 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 transition" 
+               placeholder="Your Name">
+      </div>
+
+      <div>
+        <label for="phone" class="block text-gray-300 mb-2">Phone</label>
+        <input type="text" name="phone" id="phone" required
+               class="w-full px-4 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 transition" 
+               placeholder="123-456-7890">
+      </div>
+
+      <div>
         <label for="email" class="block text-gray-300 mb-2">Email</label>
         <input type="email" name="email" id="email" required
                class="w-full px-4 py-2 bg-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 transition" 
@@ -117,7 +133,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['register'])) {
               class="w-full bg-cyan-500 hover:bg-cyan-400 text-white font-semibold py-2 px-4 rounded-md transition-all duration-300">
         Register
       </button>
-
     </form>
 
     <?php if (!empty($msg)) : ?>
